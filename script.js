@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
             imageUrl: 'https://placehold.co/150x150/ffb700/333?text=متجر'
         },
         {
-            name: 'مدونة شخصية',
-            url: 'https://example.com/personal-blog',
+            name: 'مدير المبيعات',
+            url: 'https://resources-manager.netlify.app/',
             imageUrl: 'https://placehold.co/150x150/34a853/white?text=مدونة'
         },
         {
-            name: 'أداة حسابات',
-            url: 'https://example.com/calculator-tool',
+            name: 'مدير المشاريع',
+            url: 'https://project-mag.netlify.app/',
             imageUrl: 'https://placehold.co/150x150/ea4335/white?text=حاسبة'
         },
          {
