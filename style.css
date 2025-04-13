@@ -1,0 +1,194 @@
+/* --- المتغيرات والأساسيات --- */
+:root {
+    --primary-color: #6a11cb; /* بنفسجي جذاب */
+    --secondary-color: #2575fc; /* أزرق مكمل */
+    --gradient-bg: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --text-light: #f8f9fa;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+    --border-radius: 12px;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.07);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --font-main: 'Readex Pro', sans-serif; /* خط عصري */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-main);
+    background-image: var(--gradient-bg);
+    background-attachment: fixed; /* تثبيت الخلفية المتدرجة */
+    color: var(--text-color);
+    line-height: 1.7;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* محاذاة للأعلى للسماح بالتمرير */
+    min-height: 100vh;
+    padding: 2rem 1rem; /* حشو حول المحتوى */
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px; /* عرض أقصى للحاوية */
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9); /* خلفية بيضاء شبه شفافة */
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(5px); /* تأثير ضبابي للخلفية */
+    text-align: center;
+}
+
+.page-header {
+    margin-bottom: 2.5rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- شبكة التطبيقات --- */
+.app-grid {
+    display: grid;
+    /* أعمدة متجاوبة: تعرض أكبر عدد ممكن من الأعمدة بعرض أدنى 180px */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.8rem; /* المسافة بين البطاقات */
+}
+
+.app-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex; /* استخدام flex لتنسيق المحتوى الداخلي */
+    flex-direction: column; /* ترتيب المحتوى عمودياً */
+    align-items: center; /* توسيط المحتوى أفقياً */
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    opacity: 0; /* للأنيميشن */
+    transform: translateY(20px); /* للأنيميشن */
+    animation: cardFadeIn 0.5s forwards; /* تطبيق الأنيميشن */
+}
+
+/* تأخير الأنيميشن لكل بطاقة */
+/* يمكنك إضافة المزيد إذا كان لديك أكثر من 10 بطاقات */
+.app-card:nth-child(1) { animation-delay: 0.1s; }
+.app-card:nth-child(2) { animation-delay: 0.15s; }
+.app-card:nth-child(3) { animation-delay: 0.2s; }
+.app-card:nth-child(4) { animation-delay: 0.25s; }
+.app-card:nth-child(5) { animation-delay: 0.3s; }
+.app-card:nth-child(6) { animation-delay: 0.35s; }
+.app-card:nth-child(7) { animation-delay: 0.4s; }
+.app-card:nth-child(8) { animation-delay: 0.45s; }
+.app-card:nth-child(9) { animation-delay: 0.5s; }
+.app-card:nth-child(10) { animation-delay: 0.55s; }
+
+
+@keyframes cardFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.app-card:hover {
+    transform: translateY(-8px) scale(1.02); /* تأثير رفع وتكبير طفيف */
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color); /* تغيير لون الحد عند المرور */
+}
+
+.app-card .app-icon {
+    width: 100px; /* حجم أيقونة التطبيق */
+    height: 100px;
+    border-radius: 25%; /* حواف دائرية للأيقونة */
+    object-fit: cover; /* ضمان ملء الصورة للمربع بدون تشويه */
+    margin-bottom: 1rem;
+    background-color: #eee; /* لون خلفية احتياطي */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.app-card .app-name {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+/* --- قدم الصفحة --- */
+.page-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- تصميم متجاوب --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    .page-header p {
+        font-size: 1rem;
+    }
+    .app-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.2rem;
+    }
+    .app-card {
+        padding: 1rem;
+    }
+    .app-card .app-icon {
+        width: 80px;
+        height: 80px;
+    }
+    .app-card .app-name {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+    .container {
+        padding: 1rem;
+    }
+    .app-grid {
+        /* عرض عمودين على الشاشات الصغيرة جدًا */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    .app-card .app-icon {
+        width: 70px;
+        height: 70px;
+    }
+      }
