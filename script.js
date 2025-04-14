@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
             imageUrl: 'https://placehold.co/150x150/ea4335/white?text=حاسبة'
         },
          {
-            name: 'لوحة تحكم',
-            url: 'https://example.com/dashboard',
+            name: 'قائمة المهام',
+            url: 'https://to-do-list-pro1.netlify.app',
             imageUrl: 'https://placehold.co/150x150/7f8c8d/white?text=تحكم'
         }
         // ... أضف المزيد من التطبيقات هنا
