@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             name: 'أدارة المعلومات',
             url: 'https://pers-info.netlify.app',
-            imageUrl: 'https://placehold.co/150x150/7f8c8d/white?text=تحكم'
+            imageUrl: 'https://placehold.co/150x150/2575fc/white?text=مهام'
         }
         // ... أضف المزيد من التطبيقات هنا
     ];
